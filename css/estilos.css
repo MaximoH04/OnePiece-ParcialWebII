@@ -1,0 +1,629 @@
+/* Estilos de Bitacora Pirata - TP Programacion Web II */
+
+:root {
+    --azul: #0b2e4a;
+    --azul-claro: #1b6ea8;
+    --rojo: #c1121f;
+    --dorado: #f0d730;
+    --crema: #f4efe4;
+    --verde: #2f6b4f;
+    --gris: #666;
+    --borde: #d9cfba;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* el body en columna para que el pie quede siempre abajo de todo */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background: var(--crema);
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--azul);
+    line-height: 1.25;
+}
+
+/* ---------- encabezado ---------- */
+
+.encabezado {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 30px;
+    background: var(--azul);
+    border-bottom: 4px solid var(--dorado);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.marca img {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--dorado);
+}
+
+.marca span {
+    display: flex;
+    flex-direction: column;
+}
+
+.marca strong {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    color: #fff;
+}
+
+.marca small {
+    font-size: 12px;
+    color: var(--dorado);
+}
+
+.menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    padding: 9px 15px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background: #16456b;
+    color: var(--dorado);
+}
+
+/* la clase activo la agrega encabezado.php segun en que pagina estoy */
+.menu a.activo {
+    background: var(--dorado);
+    color: var(--azul);
+}
+
+/* ---------- portada ---------- */
+
+.portada {
+    margin-bottom: 45px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--azul);
+}
+
+.portada-imagen {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    object-position: center 35%;
+}
+
+.portada-texto {
+    padding: 28px 32px 34px;
+    color: #e9e4d8;
+}
+
+.portada-logo {
+    width: 230px;
+    margin-bottom: 14px;
+}
+
+.portada-texto h1 {
+    font-size: 34px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.portada-texto p {
+    max-width: 640px;
+    margin-bottom: 22px;
+}
+
+/* ---------- secciones y botones ---------- */
+
+.seccion {
+    margin-bottom: 45px;
+}
+
+.seccion h1,
+.seccion h2 {
+    font-size: 28px;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    border-bottom: 3px solid var(--dorado);
+}
+
+.bajada {
+    max-width: 700px;
+    margin-bottom: 25px;
+    color: #55606b;
+}
+
+.boton {
+    display: inline-block;
+    padding: 11px 22px;
+    background: var(--rojo);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: inherit;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background: #8e0f18;
+}
+
+.boton.azul {
+    background: var(--azul-claro);
+}
+
+.boton.azul:hover {
+    background: #145a87;
+}
+
+.invitacion {
+    padding: 25px 28px;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-left: 6px solid var(--azul-claro);
+    border-radius: 6px;
+}
+
+.invitacion p {
+    max-width: 700px;
+    margin-bottom: 18px;
+}
+
+/* ---------- tarjetas del tablero ---------- */
+
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px;
+    max-width: 335px;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* esta variante la aplico con el if de adentro del foreach */
+.tarjeta.destacada {
+    border: 3px solid var(--dorado);
+    background: #fffdf2;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.tarjeta-datos {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 7px;
+    padding: 15px;
+}
+
+.tarjeta-datos h3 {
+    font-size: 21px;
+}
+
+.puesto {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--azul-claro);
+}
+
+.descripcion {
+    flex: 1;
+    font-size: 15px;
+    color: #55606b;
+}
+
+.recompensa {
+    font-weight: bold;
+    color: var(--rojo);
+}
+
+.prioridad {
+    padding: 5px 9px;
+    background: #fdf3d0;
+    border-left: 4px solid var(--dorado);
+    font-size: 13px;
+    font-weight: 600;
+    color: #7a5a2f;
+}
+
+.etiqueta {
+    align-self: flex-start;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--verde);
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.etiqueta.gris {
+    background: var(--gris);
+}
+
+/* ---------- fichas de la tripulacion ---------- */
+
+.ficha {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 22px;
+    margin-bottom: 20px;
+    padding: 18px;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+}
+
+.ficha figure {
+    flex: 0 0 180px;
+}
+
+.ficha figure img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.ficha figcaption {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--rojo);
+}
+
+.ficha div {
+    flex: 1 1 320px;
+}
+
+.ficha h2 {
+    font-size: 23px;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dato {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #55606b;
+}
+
+.texto p {
+    max-width: 760px;
+    margin-bottom: 14px;
+}
+
+/* ---------- sagas ---------- */
+
+.sagas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.saga {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 440px;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.saga img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.saga-texto {
+    padding: 16px;
+}
+
+.saga-texto h2 {
+    font-size: 23px;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.episodios {
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--rojo);
+}
+
+/* ---------- formulario ---------- */
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 660px;
+    padding: 26px;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+}
+
+.fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.fila .campo {
+    flex: 1 1 210px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.campo label {
+    font-weight: bold;
+    color: var(--azul);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    padding: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    border: 2px solid var(--borde);
+    border-radius: 4px;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--azul-claro);
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.formulario .boton {
+    align-self: flex-start;
+}
+
+/* ---------- confirmacion ---------- */
+
+.caja {
+    margin-bottom: 28px;
+    padding: 22px 26px;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-left: 8px solid var(--gris);
+    border-radius: 6px;
+}
+
+.caja h1 {
+    font-size: 27px;
+    border: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.caja p {
+    margin-bottom: 12px;
+}
+
+.caja ul {
+    margin: 0 0 16px 20px;
+    color: #8e0f18;
+}
+
+.caja.exito {
+    border-left-color: var(--verde);
+}
+
+.caja.error {
+    border-left-color: var(--rojo);
+    background: #fff8f7;
+}
+
+.caja.atencion {
+    border-left-color: var(--dorado);
+    background: #fffdf2;
+}
+
+.contexto {
+    padding: 11px 15px;
+    background: #f0f6f2;
+    border-left: 4px solid var(--verde);
+}
+
+.resumen {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px 0 25px;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.resumen dt {
+    flex: 0 0 190px;
+    padding: 13px 18px;
+    font-weight: bold;
+    color: var(--azul);
+    border-bottom: 1px solid #eee5d4;
+}
+
+/* el calc es para que cada dato ocupe su propio renglon y no entren dos por fila */
+.resumen dd {
+    flex: 1 1 calc(100% - 190px);
+    padding: 13px 18px;
+    border-bottom: 1px solid #eee5d4;
+    word-break: break-word;
+}
+
+/* ---------- pie ---------- */
+
+.pie {
+    margin-top: auto;
+    padding: 30px 20px 18px;
+    background: var(--azul);
+    border-top: 4px solid var(--dorado);
+    color: #e9e4d8;
+    font-size: 14px;
+}
+
+.pie-columnas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.pie-columnas > div {
+    flex: 1 1 250px;
+}
+
+.pie h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+    color: var(--dorado);
+}
+
+.pie ul {
+    list-style: none;
+}
+
+.pie a {
+    display: inline-block;
+    padding: 2px 0;
+    color: #e9e4d8;
+    text-decoration: none;
+}
+
+.pie a:hover {
+    color: var(--dorado);
+    text-decoration: underline;
+}
+
+.creditos {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #a9b6c2;
+}
+
+.legal {
+    max-width: 1080px;
+    margin: 22px auto 0;
+    padding-top: 14px;
+    border-top: 1px solid #1d4a6e;
+    font-size: 13px;
+    text-align: center;
+    color: #a9b6c2;
+}
+
+/* ---------- pantallas chicas ---------- */
+
+@media (max-width: 760px) {
+    .encabezado {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 18px;
+    }
+
+    /* el menu ocupa todo el ancho y los links se achican para que entren
+       sin que la pagina tenga que scrollear para el costado */
+    .menu {
+        width: 100%;
+    }
+
+    .menu a {
+        padding: 8px 11px;
+    }
+
+    .portada-texto h1 {
+        font-size: 27px;
+    }
+
+    .portada-logo {
+        width: 170px;
+    }
+
+    .tarjeta {
+        max-width: 100%;
+    }
+
+    .resumen dt {
+        flex: 1 1 100%;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
