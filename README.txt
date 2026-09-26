@@ -7,7 +7,7 @@ Tematica: Anime One Piece
 
 Repositorio
 -----------
-https://github.com/MaximoH04-/parcial-webII
+https://github.com/MaximoH04/OnePiece-ParcialWebII
 
 
 Archivos

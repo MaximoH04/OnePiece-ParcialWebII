@@ -88,8 +88,7 @@ require_once __DIR__ . '/../componentes/encabezado.php';
     <div class="caja atencion">
         <h1>Acceso indebido</h1>
         <p>
-            Esta página solamente muestra el resultado de un formulario enviado. Llegaste
-            directo desde la barra de direcciones, así que no hay ningún dato para mostrar.
+            Esta página solamente muestra el resultado de un formulario enviado.
         </p>
         <a class="boton" href="<?= BASE_URL ?>/paginas/contacto.php">Ir al formulario</a>
     </div>
