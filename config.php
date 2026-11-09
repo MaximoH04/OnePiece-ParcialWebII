@@ -6,8 +6,13 @@
 // subo además un config.produccion.php con la URL y los datos de la base de allá.
 // Ese archivo no va a GitHub porque tiene la contraseña de la base de datos
 // (hay un modelo en config.produccion.ejemplo.php).
+//
+// Aunque el archivo esté en la PC, en localhost siempre uso XAMPP: la base de
+// InfinityFree no acepta conexiones desde afuera del hosting.
 
-if (is_file(__DIR__ . '/config.produccion.php')) {
+$enLocalhost = in_array($_SERVER['SERVER_NAME'] ?? 'localhost', ['localhost', '127.0.0.1', '::1'], true);
+
+if (!$enLocalhost && is_file(__DIR__ . '/config.produccion.php')) {
     require __DIR__ . '/config.produccion.php';
 } else {
     define('BASE_URL', '/parcial-webII');

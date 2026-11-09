@@ -73,10 +73,12 @@ Despliegue en InfinityFree
 --------------------------
 1. Crear la base desde el panel (MySQL Databases) y anotar host, usuario,
    contrasena y nombre de la base.
-2. En phpMyAdmin del hosting, elegir esa base, borrar las lineas CREATE DATABASE
-   y USE del database.sql e importarlo.
+2. En phpMyAdmin del hosting, elegir esa base e importar
+   database/database-infinityfree.sql (es igual a database.sql pero sin
+   CREATE DATABASE ni USE, que InfinityFree no permite).
 3. Copiar config.produccion.ejemplo.php como config.produccion.php y completar los datos.
-   (config.produccion.php no se sube a GitHub porque tiene la contrasena.)
+   (config.produccion.php no se sube a GitHub porque tiene la contrasena.
+   En localhost se ignora y se sigue usando la base de XAMPP.)
 4. Subir los archivos a htdocs por el File Manager o FTP.
 
 

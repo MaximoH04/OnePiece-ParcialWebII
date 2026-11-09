@@ -8,7 +8,7 @@
 
 -- En XAMPP estas dos líneas crean la base y la seleccionan.
 -- En InfinityFree la base ya viene creada desde el panel y no deja crear otra:
--- borrar (o comentar) estas dos líneas, elegir la base en phpMyAdmin e importar.
+-- para el hosting usar database-infinityfree.sql, que no las tiene.
 CREATE DATABASE IF NOT EXISTS bitacora_pirata
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
