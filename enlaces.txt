@@ -5,4 +5,4 @@ Alumno: Maximo Hidalgo
 https://github.com/MaximoH04/OnePiece-ParcialWebII
 
 2) Sitio desplegado en InfinityFree:
-http://COMPLETAR.infinityfreeapp.com
+https://bitacora-one-piece.infinityfree.io/
