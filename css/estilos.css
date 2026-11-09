@@ -7,6 +7,37 @@
     --verde: #2f6b4f;
     --gris: #666;
     --borde: #d9cfba;
+
+    /* colores que cambian con el tema (la cookie "tema" pone la clase en el body) */
+    --fondo: var(--crema);
+    --superficie: #fff;
+    --texto: #222;
+    --texto-suave: #55606b;
+    --titulo: var(--azul);
+    --linea: #eee5d4;
+    --resaltado: #fffdf2;
+    --fondo-error: #fff8f7;
+    --texto-error: #8e0f18;
+    --fondo-exito: #f0f6f2;
+    --fondo-prioridad: #fdf3d0;
+    --texto-prioridad: #7a5a2f;
+}
+
+/* tema oscuro: piso solamente las variables, el resto de las reglas no cambia */
+body.tema-oscuro {
+    --fondo: #0f1a24;
+    --superficie: #182633;
+    --texto: #e6e1d6;
+    --texto-suave: #a9b6c2;
+    --titulo: #f0d730;
+    --borde: #2c3e4f;
+    --linea: #2c3e4f;
+    --resaltado: #24301f;
+    --fondo-error: #3a1c1e;
+    --texto-error: #ff9a9a;
+    --fondo-exito: #1b3328;
+    --fondo-prioridad: #3a3418;
+    --texto-prioridad: #f0d730;
 }
 
 * {
@@ -22,8 +53,8 @@ body {
     min-height: 100vh;
     font-family: "Segoe UI", Tahoma, sans-serif;
     line-height: 1.6;
-    color: #222;
-    background: var(--crema);
+    color: var(--texto);
+    background: var(--fondo);
 }
 
 main {
@@ -41,7 +72,7 @@ img {
 
 h1, h2, h3 {
     font-family: Georgia, "Times New Roman", serif;
-    color: var(--azul);
+    color: var(--titulo);
     line-height: 1.25;
 }
 
@@ -170,7 +201,7 @@ h1, h2, h3 {
 .bajada {
     max-width: 700px;
     margin-bottom: 25px;
-    color: #55606b;
+    color: var(--texto-suave);
 }
 
 .boton {
@@ -201,7 +232,7 @@ h1, h2, h3 {
 
 .invitacion {
     padding: 25px 28px;
-    background: #fff;
+    background: var(--superficie);
     border: 1px solid var(--borde);
     border-left: 6px solid var(--azul-claro);
     border-radius: 6px;
@@ -225,7 +256,7 @@ h1, h2, h3 {
     flex-direction: column;
     flex: 1 1 300px;
     max-width: 335px;
-    background: #fff;
+    background: var(--superficie);
     border: 1px solid var(--borde);
     border-radius: 8px;
     overflow: hidden;
@@ -234,7 +265,7 @@ h1, h2, h3 {
 /* esta variante la aplico con el if de adentro del foreach */
 .tarjeta.destacada {
     border: 3px solid var(--dorado);
-    background: #fffdf2;
+    background: var(--resaltado);
 }
 
 .tarjeta img {
@@ -267,7 +298,7 @@ h1, h2, h3 {
 .descripcion {
     flex: 1;
     font-size: 15px;
-    color: #55606b;
+    color: var(--texto-suave);
 }
 
 .recompensa {
@@ -277,11 +308,11 @@ h1, h2, h3 {
 
 .prioridad {
     padding: 5px 9px;
-    background: #fdf3d0;
+    background: var(--fondo-prioridad);
     border-left: 4px solid var(--dorado);
     font-size: 13px;
     font-weight: 600;
-    color: #7a5a2f;
+    color: var(--texto-prioridad);
 }
 
 .etiqueta {
@@ -308,7 +339,7 @@ h1, h2, h3 {
     gap: 22px;
     margin-bottom: 20px;
     padding: 18px;
-    background: #fff;
+    background: var(--superficie);
     border: 1px solid var(--borde);
     border-radius: 8px;
 }
@@ -344,7 +375,7 @@ h1, h2, h3 {
 .dato {
     margin-top: 8px;
     font-size: 14px;
-    color: #55606b;
+    color: var(--texto-suave);
 }
 
 .texto p {
@@ -364,7 +395,7 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     flex: 1 1 440px;
-    background: #fff;
+    background: var(--superficie);
     border: 1px solid var(--borde);
     border-radius: 8px;
     overflow: hidden;
@@ -403,7 +434,7 @@ h1, h2, h3 {
     gap: 16px;
     max-width: 660px;
     padding: 26px;
-    background: #fff;
+    background: var(--superficie);
     border: 1px solid var(--borde);
     border-radius: 8px;
 }
@@ -426,7 +457,7 @@ h1, h2, h3 {
 
 .campo label {
     font-weight: bold;
-    color: var(--azul);
+    color: var(--titulo);
 }
 
 .campo input,
@@ -459,7 +490,7 @@ h1, h2, h3 {
 .caja {
     margin-bottom: 28px;
     padding: 22px 26px;
-    background: #fff;
+    background: var(--superficie);
     border: 1px solid var(--borde);
     border-left: 8px solid var(--gris);
     border-radius: 6px;
@@ -478,7 +509,7 @@ h1, h2, h3 {
 
 .caja ul {
     margin: 0 0 16px 20px;
-    color: #8e0f18;
+    color: var(--texto-error);
 }
 
 .caja.exito {
@@ -487,17 +518,17 @@ h1, h2, h3 {
 
 .caja.error {
     border-left-color: var(--rojo);
-    background: #fff8f7;
+    background: var(--fondo-error);
 }
 
 .caja.atencion {
     border-left-color: var(--dorado);
-    background: #fffdf2;
+    background: var(--resaltado);
 }
 
 .contexto {
     padding: 11px 15px;
-    background: #f0f6f2;
+    background: var(--fondo-exito);
     border-left: 4px solid var(--verde);
 }
 
@@ -505,7 +536,7 @@ h1, h2, h3 {
     display: flex;
     flex-wrap: wrap;
     margin: 15px 0 25px;
-    background: #fff;
+    background: var(--superficie);
     border: 1px solid var(--borde);
     border-radius: 6px;
     overflow: hidden;
@@ -515,15 +546,15 @@ h1, h2, h3 {
     flex: 0 0 190px;
     padding: 13px 18px;
     font-weight: bold;
-    color: var(--azul);
-    border-bottom: 1px solid #eee5d4;
+    color: var(--titulo);
+    border-bottom: 1px solid var(--linea);
 }
 
 /* el calc es para que cada dato ocupe su propio renglon y no entren dos por fila */
 .resumen dd {
     flex: 1 1 calc(100% - 190px);
     padding: 13px 18px;
-    border-bottom: 1px solid #eee5d4;
+    border-bottom: 1px solid var(--linea);
     word-break: break-word;
 }
 
@@ -588,6 +619,137 @@ h1, h2, h3 {
     color: #a9b6c2;
 }
 
+/* ---------- menu de la cuenta (cambia segun la sesion) ---------- */
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 18px;
+}
+
+.menu-cuenta {
+    align-items: center;
+    padding-left: 18px;
+    border-left: 1px solid #2d5b80;
+}
+
+.saludo {
+    padding: 0 6px;
+    font-size: 14px;
+    color: var(--dorado);
+}
+
+.menu form {
+    display: block;
+}
+
+/* boton del tema: se ve como un link mas del menu pero es un formulario */
+.boton-tema {
+    padding: 8px 13px;
+    background: transparent;
+    border: 1px solid var(--dorado);
+    border-radius: 4px;
+    color: var(--dorado);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.boton-tema:hover {
+    background: var(--dorado);
+    color: var(--azul);
+}
+
+/* ---------- mensajes flash ---------- */
+
+.flash {
+    margin-bottom: 24px;
+    padding: 13px 18px;
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-left: 6px solid var(--gris);
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.flash.exito {
+    border-left-color: var(--verde);
+    background: var(--fondo-exito);
+}
+
+.flash.error {
+    border-left-color: var(--rojo);
+    background: var(--fondo-error);
+}
+
+.flash.atencion {
+    border-left-color: var(--dorado);
+    background: var(--resaltado);
+}
+
+/* ---------- login y registro ---------- */
+
+.formulario-chico {
+    max-width: 480px;
+}
+
+.caja h2 {
+    font-size: 22px;
+    border: none;
+    padding: 0;
+    margin-bottom: 8px;
+}
+
+.ayuda {
+    font-size: 13px;
+    color: var(--texto-suave);
+}
+
+.casilla {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.casilla input {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--rojo);
+}
+
+.pie-formulario {
+    font-size: 14px;
+    color: var(--texto-suave);
+}
+
+.pie-formulario a {
+    color: var(--azul-claro);
+    font-weight: 600;
+}
+
+/* ---------- ajustes del tema oscuro que no salen solo con variables ---------- */
+
+.tema-oscuro .campo input,
+.tema-oscuro .campo select,
+.tema-oscuro .campo textarea {
+    background: #0f1a24;
+    color: var(--texto);
+}
+
+.tema-oscuro .puesto,
+.tema-oscuro .pie-formulario a {
+    color: #7cbcec;
+}
+
+.tema-oscuro .recompensa,
+.tema-oscuro .episodios,
+.tema-oscuro .ficha figcaption {
+    color: #ff7b7b;
+}
+
 /* ---------- pantallas chicas ---------- */
 
 @media (max-width: 760px) {
@@ -605,6 +767,11 @@ h1, h2, h3 {
 
     .menu a {
         padding: 8px 11px;
+    }
+
+    .menu-cuenta {
+        padding-left: 0;
+        border-left: none;
     }
 
     .portada-texto h1 {
