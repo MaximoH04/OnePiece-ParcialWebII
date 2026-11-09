@@ -1,0 +1,8 @@
+Segundo Parcial - Programacion Web II
+Alumno: Maximo Hidalgo
+
+1) Repositorio de GitHub:
+https://github.com/MaximoH04/OnePiece-ParcialWebII
+
+2) Sitio desplegado en InfinityFree:
+http://COMPLETAR.infinityfreeapp.com
